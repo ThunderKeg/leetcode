@@ -1,7 +1,5 @@
 package n2;
 
-import n2.ListNode;
-import n2.Solution;
 import org.junit.Test;
 
 public class TestProblem2 {
@@ -16,9 +14,10 @@ public class TestProblem2 {
         l2.next.next = new ListNode(4);
 
         Solution s2 = new Solution();
-        ListNode l3 = s2.addTwoNumbers(l1,l2);
+        ListNode l3 = s2.addTwoNumbers(l1, l2);
         System.out.println(listNodeToString(l3));
     }
+
     private String listNodeToString(ListNode node) {
         StringBuilder sb = new StringBuilder();
         while (node != null) {

@@ -1,9 +1,25 @@
 package n3;
 
-/**
- * @author <a href="mailto:huangyujie.hyj@alibaba-inc.com">班吉</a>
- * @version V1.0.0
- * @since 10/21/15
- */
+import java.util.HashMap;
+import java.util.Map;
+
 public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        Map<Character, Integer> charIndexMap = new HashMap<Character, Integer>();
+        int longest = 0;
+
+        for (int i = 0 ; i < s.length() ; i++) {
+            Integer index = charIndexMap.get(s.charAt(i));
+            if (index == null) {
+                charIndexMap.put(s.charAt(i), i);
+            }
+            else {
+                longest = Math.max(charIndexMap.size(), longest);
+                charIndexMap.clear();
+                i = index;
+            }
+        }
+        longest = Math.max(charIndexMap.size(), longest);
+        return longest;
+    }
 }

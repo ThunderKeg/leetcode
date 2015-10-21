@@ -1,9 +1,15 @@
 package n2;
 
-/**
- * @author <a href="mailto:huangyujie.hyj@alibaba-inc.com">班吉</a>
- * @version V1.0.0
- * @since 10/21/15
- */
 public class ListNode {
+    public int val;
+    public ListNode next;
+
+    @Override
+    public String toString() {
+        return val + "";
+    }
+
+    public ListNode(int x) {
+        val = x;
+    }
 }
